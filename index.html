@@ -329,8 +329,8 @@
         
         // Password protection
         function checkPassword() {
-            const password = document.getElementById('password-input').value;
-            if (password === 'WMT2025') {
+            const enteredPassword = document.getElementById('password-input').value;
+            if (enteredPassword.toUpperCase() === 'WMT2025') {
                 document.getElementById('password-overlay').classList.add('hidden');
                 // Store in session storage so it persists during the session
                 sessionStorage.setItem('authenticated', 'true');
