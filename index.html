@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade.gold - Enterprise Access</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #004C91 0%, #0071CE 100%);
+        }
+
+        .login-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-logo {
+            margin-bottom: 2rem;
+        }
+
+        .login-logo h1 {
+            color: #0071CE;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .login-title {
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #0071CE;
+            outline: none;
+        }
+
+        .login-button {
+            background-color: #0071CE;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #004C91;
+        }
+
+        .error-message {
+            color: #dc3545;
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-logo">
+                <h1>cascade.gold</h1>
+            </div>
+            <h2 class="login-title">Enterprise Access Portal</h2>
+            <form id="login-form" class="login-form">
+                <div class="input-group">
+                    <input type="text" id="access-code" placeholder="Enter your enterprise access code" required>
+                </div>
+                <button type="submit" class="login-button">Access Portal</button>
+                <div id="error-message" class="error-message">Invalid access code. Please try again.</div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const accessCode = document.getElementById('access-code').value.trim();
+            const errorMessage = document.getElementById('error-message');
+            
+            if (accessCode === 'WMT2025') {
+                window.location.href = 'walmart.html';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+
+        // Clear error message when user starts typing
+        document.getElementById('access-code').addEventListener('input', function() {
+            document.getElementById('error-message').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

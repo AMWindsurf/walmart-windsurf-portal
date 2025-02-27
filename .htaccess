@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Redirect all traffic to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Block direct access to walmart.html
+RewriteCond %{HTTP_REFERER} !^https?://cascade\.gold [NC]
+RewriteRule ^walmart\.html$ - [F]
+
+# Custom error pages
+ErrorDocument 403 /index.html
+ErrorDocument 404 /index.html

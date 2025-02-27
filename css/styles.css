@@ -1,0 +1,474 @@
+:root {
+    --walmart-blue: #0071CE;
+    --walmart-yellow: #FCB61A;
+    --walmart-dark-blue: #004C91;
+    --walmart-light-blue: #78B9E7;
+    --walmart-gray: #666666;
+    --walmart-light-gray: #F2F2F2;
+    --walmart-dark-gray: #333333;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    color: var(--walmart-dark-gray);
+    background-color: #ffffff;
+}
+
+/* Navigation */
+.main-nav {
+    background-color: var(--walmart-blue);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.walmart-logo {
+    font-weight: 900;
+    margin-right: 0.25rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--walmart-blue) 0%, var(--walmart-dark-blue) 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--walmart-yellow);
+    color: var(--walmart-dark-gray);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e9a718;
+}
+
+/* Content Section */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Tab Navigation */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--walmart-light-gray);
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: none;
+    color: var(--walmart-gray);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+    color: var(--walmart-blue);
+    border-bottom: 3px solid var(--walmart-blue);
+    font-weight: 600;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding: 1rem 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.overview-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--walmart-blue);
+    margin-bottom: 1rem;
+}
+
+.overview-card h3 {
+    margin-bottom: 1rem;
+    color: var(--walmart-dark-blue);
+}
+
+/* Metrics Container */
+.metrics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.metric-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--walmart-blue);
+}
+
+.metric-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--walmart-blue);
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--walmart-dark-gray);
+}
+
+.metric-card p {
+    color: var(--walmart-gray);
+}
+
+/* Impact Details */
+.impact-details {
+    background-color: var(--walmart-light-gray);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.impact-details h3 {
+    margin-bottom: 1rem;
+    color: var(--walmart-dark-blue);
+}
+
+.impact-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.impact-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.impact-icon {
+    color: var(--walmart-blue);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Vision Section */
+.vision-intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.vision-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.vision-icon {
+    font-size: 2.5rem;
+    color: var(--walmart-yellow);
+    margin-bottom: 1rem;
+}
+
+.vision-card h3 {
+    margin-bottom: 1rem;
+    color: var(--walmart-dark-blue);
+}
+
+.cta-container {
+    background-color: var(--walmart-light-gray);
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.cta-container h3 {
+    margin-bottom: 1.5rem;
+    color: var(--walmart-dark-blue);
+}
+
+/* Feature Section */
+.feature-intro {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid var(--walmart-blue);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--walmart-blue);
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--walmart-dark-blue);
+    font-size: 1.4rem;
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    padding-left: 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--walmart-blue);
+    font-weight: bold;
+}
+
+/* Capabilities Section */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.capability-card {
+    background-color: var(--walmart-light-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: transform 0.3s;
+}
+
+.capability-card:hover {
+    transform: translateY(-5px);
+}
+
+.capability-icon {
+    font-size: 2rem;
+    color: var(--walmart-yellow);
+    margin-bottom: 1.5rem;
+}
+
+.capability-card h3 {
+    margin-bottom: 1rem;
+    color: var(--walmart-dark-blue);
+    font-size: 1.3rem;
+}
+
+.capability-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+.capability-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.capability-list .icon {
+    color: var(--walmart-blue);
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    width: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--walmart-dark-blue);
+    color: white;
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tabs {
+        flex-wrap: wrap;
+    }
+    
+    .overview-grid,
+    .metrics-container,
+    .vision-grid,
+    .feature-grid,
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+}
