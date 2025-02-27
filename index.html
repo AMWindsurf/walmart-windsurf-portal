@@ -11,9 +11,60 @@
     <title>Walmart - Codeium Portal</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://www.walmart.com/vpwaitingroom/pglass/fonts/bogle/bogle.css">
+    <style>
+        #password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--wmt-dark-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        #password-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        #password-box input {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #password-box button {
+            background: var(--wmt-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #password-box button:hover {
+            background: var(--wmt-dark-blue);
+        }
+        .hidden {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
+    <div id="password-overlay">
+        <div id="password-box">
+            <img src="assets/walmart-logo.png" alt="Walmart Logo" style="max-width: 200px; margin-bottom: 1rem;">
+            <h2>Walmart Windsurf Portal</h2>
+            <p>Please enter the password to access the portal</p>
+            <input type="password" id="password-input" placeholder="Enter password">
+            <button onclick="checkPassword()">Submit</button>
+        </div>
+    </div>
     <header class="main-header">
         <div class="logo">
             <h1>Codeium Windsurf/Cascade</h1>
@@ -274,6 +325,30 @@
                     behavior: 'smooth'
                 });
             });
+        });
+        
+        // Password protection
+        function checkPassword() {
+            const password = document.getElementById('password-input').value;
+            if (password === 'WMT2025') {
+                document.getElementById('password-overlay').classList.add('hidden');
+                // Store in session storage so it persists during the session
+                sessionStorage.setItem('authenticated', 'true');
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+        
+        // Check if already authenticated
+        if (sessionStorage.getItem('authenticated') === 'true') {
+            document.getElementById('password-overlay').classList.add('hidden');
+        }
+        
+        // Allow Enter key to submit
+        document.getElementById('password-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
         });
     </script>
 </body>
