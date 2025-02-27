@@ -12,18 +12,64 @@
     --wmt-white: #FFFFFF;
 }
 
-/* Reset and Base Styles */
+/* Base Resets and Compatibility */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
     font-family: "Bogle", Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     color: var(--wmt-black);
     background-color: var(--wmt-white);
+}
+
+/* Flexbox & Grid Fallbacks */
+.flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.grid-container {
+    display: -ms-grid;
+    display: grid;
+}
+
+/* Touch Input Improvements */
+button, 
+a {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+/* Image Optimizations */
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-drag: none;
+}
+
+/* Smooth Scrolling for iOS */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
 /* Typography */
@@ -432,5 +478,103 @@ main {
     
     .metric-card h3 {
         font-size: 2.5rem;
+    }
+}
+
+/* Mobile-First Media Queries */
+/* Small devices (landscape phones) */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .nav-menu {
+        display: flex !important;
+    }
+    
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .hero-content {
+        padding: 6rem 0;
+    }
+}
+
+/* Extra large devices */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* CSS Variables Fallback */
+@supports not (--css: variables) {
+    :root {
+        background-color: #0071DC;
+        color: #041E42;
+    }
+}
+
+/* Animation Performance */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.tab-content {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    overflow: visible;
+}
+
+/* Touch-friendly hover states */
+@media (hover: hover) {
+    .button:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (hover: none) {
+    .button:active {
+        transform: translateY(-2px);
     }
 }
