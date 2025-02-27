@@ -1,14 +1,15 @@
 /* Variables */
 :root {
-    --walmart-blue: #0071DC;
-    --walmart-spark: #FFC220;
-    --walmart-dark-blue: #004F9A;
-    --walmart-light-blue: #E6F1FC;
-    --walmart-black: #2E2F32;
-    --walmart-dark-gray: #46474A;
-    --walmart-gray: #6B6C72;
-    --walmart-light-gray: #F6F6F6;
-    --walmart-white: #FFFFFF;
+    /* Official Walmart Brand Colors */
+    --wmt-blue: #0071DC;
+    --wmt-dark-blue: #041E42;
+    --wmt-light-blue: #E6F1FC;
+    --wmt-yellow: #FFC220;
+    --wmt-black: #2E2F32;
+    --wmt-dark-gray: #46474A;
+    --wmt-gray: #6B6C72;
+    --wmt-light-gray: #F6F6F6;
+    --wmt-white: #FFFFFF;
 }
 
 /* Reset and Base Styles */
@@ -19,21 +20,39 @@
 }
 
 body {
-    font-family: Bogle, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Bogle", Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 1.5;
-    color: var(--walmart-black);
-    background-color: var(--walmart-white);
+    color: var(--wmt-black);
+    background-color: var(--wmt-white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Bogle", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--wmt-dark-blue);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--wmt-gray);
 }
 
 /* Header */
 .main-header {
-    background-color: var(--walmart-blue);
-    padding: 1.5rem 2rem;
+    background-color: var(--wmt-dark-blue);
+    padding: 1.25rem 2rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo h1 {
-    color: var(--walmart-white);
+    color: var(--wmt-white);
     font-size: 1.75rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -47,18 +66,18 @@ nav ul {
 }
 
 nav a {
-    color: var(--walmart-white);
+    color: var(--wmt-white);
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 4px;
     transition: background-color 0.2s;
 }
 
 nav a:hover,
 nav a.active {
-    background-color: var(--walmart-dark-blue);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Main Content */
@@ -82,41 +101,60 @@ main {
     margin-bottom: 3rem;
 }
 
-h2 {
-    color: var(--walmart-dark-blue);
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
+/* Registration Steps */
+.registration-steps {
+    background: var(--wmt-white);
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-h3 {
-    color: var(--walmart-dark-blue);
-    font-size: 1.5rem;
+.registration-steps h3 {
+    color: var(--wmt-dark-blue);
+    margin-bottom: 1rem;
+}
+
+.registration-steps ol {
+    list-style-position: outside;
+    padding-left: 1.5rem;
+    counter-reset: steps;
+}
+
+.registration-steps ol > li {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.registration-steps ol > li::marker {
+    color: var(--wmt-blue);
     font-weight: 600;
-    margin-bottom: 1rem;
 }
 
-p {
-    color: var(--walmart-gray);
-    font-size: 1.125rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+.registration-steps ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin: 1rem 0;
+    color: var(--wmt-gray);
 }
 
-/* Features */
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.registration-steps a {
+    color: var(--wmt-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
+.registration-steps a:hover {
+    text-decoration: underline;
+    color: var(--wmt-dark-blue);
+}
+
+/* Feature Cards */
 .feature-card {
-    background: var(--walmart-white);
+    background: var(--wmt-white);
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s;
 }
 
@@ -125,13 +163,13 @@ p {
 }
 
 .feature-card i {
-    color: var(--walmart-blue);
+    color: var(--wmt-blue);
     font-size: 2rem;
     margin-bottom: 1.25rem;
 }
 
 .feature-card h3 {
-    color: var(--walmart-dark-blue);
+    color: var(--wmt-dark-blue);
     margin-bottom: 1rem;
 }
 
@@ -144,7 +182,7 @@ p {
 }
 
 .metric-card {
-    background: var(--walmart-white);
+    background: var(--wmt-white);
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
@@ -153,7 +191,7 @@ p {
 
 .metric-card h3 {
     font-size: 2.5rem;
-    color: var(--walmart-blue);
+    color: var(--wmt-blue);
     margin-bottom: 0.5rem;
 }
 
@@ -172,98 +210,227 @@ p {
 }
 
 .vision-card {
-    background: var(--walmart-white);
+    background: var(--wmt-white);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .vision-card h3 {
-    color: var(--walmart-dark-blue);
+    color: var(--wmt-dark-blue);
     margin-bottom: 1rem;
 }
 
-/* Registration Section */
-.registration-steps {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2.5rem;
-    background: var(--walmart-white);
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-.registration-steps ol {
-    list-style-position: outside;
-    padding-left: 1.5rem;
-    counter-reset: steps;
-}
-
-.registration-steps ol > li {
-    margin-bottom: 2.5rem;
-    padding-left: 1rem;
-}
-
-.registration-steps ol > li::marker {
-    color: var(--walmart-blue);
-    font-weight: 600;
-}
-
-.registration-steps ul {
-    list-style-type: disc;
-    padding-left: 2rem;
-    margin: 1rem 0;
-    color: var(--walmart-gray);
-}
-
-.registration-steps a {
-    color: var(--walmart-blue);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.registration-steps a:hover {
-    color: var(--walmart-dark-blue);
-    text-decoration: underline;
-}
-
+/* Support Note */
 .support-note {
-    margin-top: 2.5rem;
+    background: var(--wmt-light-blue);
     padding: 1.5rem;
-    background: var(--walmart-light-blue);
     border-radius: 8px;
-    border-left: 4px solid var(--walmart-blue);
+    border-left: 4px solid var(--wmt-blue);
 }
 
 .support-note p {
-    color: var(--walmart-dark-blue);
+    color: var(--wmt-dark-blue);
     margin-bottom: 0;
+}
+
+/* Timeline Section */
+.timeline-section {
+    margin: 4rem 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--wmt-light-blue);
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.timeline-date {
+    background: var(--wmt-dark-blue);
+    color: var(--wmt-white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.timeline-content {
+    background: var(--wmt-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 45%;
+    margin-top: 3rem;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 55%;
+}
+
+.timeline-content h3 {
+    color: var(--wmt-dark-blue);
+    margin-bottom: 1rem;
+}
+
+.timeline-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.timeline-content li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--wmt-gray);
+}
+
+.timeline-content li::before {
+    content: "•";
+    color: var(--wmt-blue);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Metrics Section */
+.metrics-section {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.metrics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.metric-card {
+    background: var(--wmt-white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+}
+
+.metric-card h3 {
+    font-size: 3rem;
+    color: var(--wmt-blue);
+    margin-bottom: 0.5rem;
+}
+
+.metric-card p {
+    color: var(--wmt-dark-blue);
+    font-weight: 500;
+}
+
+/* Evolution Section */
+.evolution-section {
+    margin: 4rem 0;
+}
+
+.evolution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.evolution-card {
+    background: var(--wmt-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--wmt-blue);
+    transition: transform 0.2s;
+}
+
+.evolution-card:hover {
+    transform: translateY(-4px);
+}
+
+.evolution-card h3 {
+    color: var(--wmt-dark-blue);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.evolution-card p {
+    color: var(--wmt-gray);
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .section {
-        padding: 3rem 1.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    .registration-steps {
-        padding: 1.5rem;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-    
+    .section { padding: 3rem 1.5rem; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    nav ul { flex-direction: column; gap: 0.75rem; }
+    .registration-steps { padding: 1.5rem; }
     .feature-grid,
     .metrics-container,
     .features-grid,
     .vision-container {
         grid-template-columns: 1fr;
+    }
+    .timeline::before {
+        left: 0;
+    }
+    
+    .timeline-date {
+        left: 0;
+        transform: none;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content {
+        width: 90%;
+        margin: 3rem 0 0 10% !important;
+    }
+    
+    .evolution-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .metric-card h3 {
+        font-size: 2.5rem;
     }
 }
