@@ -3,123 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cascade.gold - Enterprise Access</title>
+    <title>Walmart - Codeium Portal</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .login-container {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #004C91 0%, #0071CE 100%);
-        }
-
-        .login-box {
-            background: white;
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .login-logo {
-            margin-bottom: 2rem;
-        }
-
-        .login-logo h1 {
-            color: #0071CE;
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-
-        .login-title {
-            color: #333;
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .input-group {
-            position: relative;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #eee;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .input-group input:focus {
-            border-color: #0071CE;
-            outline: none;
-        }
-
-        .login-button {
-            background-color: #0071CE;
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .login-button:hover {
-            background-color: #004C91;
-        }
-
-        .error-message {
-            color: #dc3545;
-            margin-top: 1rem;
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="https://www.walmart.com/vpwaitingroom/pglass/fonts/bogle/bogle.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <div class="login-logo">
-                <h1>cascade.gold</h1>
-            </div>
-            <h2 class="login-title">Enterprise Access Portal</h2>
-            <form id="login-form" class="login-form">
-                <div class="input-group">
-                    <input type="text" id="access-code" placeholder="Enter your enterprise access code" required>
-                </div>
-                <button type="submit" class="login-button">Access Portal</button>
-                <div id="error-message" class="error-message">Invalid access code. Please try again.</div>
-            </form>
+    <header class="main-header">
+        <div class="logo">
+            <h1>Codeium Windsurf/Cascade</h1>
         </div>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="#registration" class="active">Registration</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#vision">Vision</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="registration" class="section active">
+            <div class="section-content">
+                <h2>Windsurf Seat Registration</h2>
+                <div class="registration-steps">
+                    <p>Please follow these steps to get started with Windsurf:</p>
+                    <ol>
+                        <li>
+                            <h3>Register for an Account</h3>
+                            <p>Please register for an account <a href="https://codeium.com/account/register" target="_blank">here</a>.</p>
+                            <p>After registering, let us know and we'll assign you the trial license.</p>
+                        </li>
+                        <li>
+                            <h3>Download and Install</h3>
+                            <p>Once you're logged in and provisioned, you can:</p>
+                            <ul>
+                                <li>Download Windsurf or the IDE Extensions from the <a href="https://codeium.com/download" target="_blank">downloads page</a></li>
+                                <li>Authenticate via your IDE</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Get Started</h3>
+                            <p>Check out our <a href="https://docs.codeium.com/getstarted/overview" target="_blank">Getting Started guide</a> for detailed instructions.</p>
+                        </li>
+                    </ol>
+                    <div class="support-note">
+                        <p>Please let us know if you have any issues during the setup process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="overview" class="section">
+            <div class="section-content">
+                <h2>Walmart <> Codeium Partnership Overview</h2>
+                <p>Welcome to the exclusive Walmart portal showcasing our transformative partnership with Codeium. As a global retail technology leader, Walmart has partnered with Codeium to revolutionize developer productivity and code quality across our organization.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Strategic Alliance</h3>
+                        <p>Leveraging Codeium's AI capabilities to enhance Walmart's development workflow</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Productivity Boost</h3>
+                        <p>Significant increase in developer efficiency and code quality</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Code Excellence</h3>
+                        <p>Enhanced code quality and consistency across teams</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="section">
+            <div class="section-content">
+                <h2>Impact & Results</h2>
+                <div class="metrics-container">
+                    <div class="metric-card">
+                        <h3>40%</h3>
+                        <p>Increase in Developer Productivity</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>50%</h3>
+                        <p>Reduction in Code Review Time</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>30%</h3>
+                        <p>Decrease in Bug Reports</p>
+                    </div>
+                </div>
+                <p class="impact-description">Our partnership with Codeium has transformed how Walmart developers work, leading to faster development cycles and higher quality code.</p>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="section-content">
+                <h2>Codeium Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI-Powered Completions</h3>
+                        <p>Context-aware code suggestions that understand your codebase</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-search"></i>
+                        <h3>Smart Search</h3>
+                        <p>Intelligent code search across your entire repository</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Natural Language Interface</h3>
+                        <p>Communicate with your IDE in plain English</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-magic"></i>
+                        <h3>Code Transformations</h3>
+                        <p>Automated refactoring and code improvements</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision" class="section">
+            <div class="section-content">
+                <h2>Future Vision</h2>
+                <div class="vision-container">
+                    <div class="vision-card">
+                        <h3>Expanding AI Capabilities</h3>
+                        <p>Continuing to enhance our AI models with Walmart-specific knowledge and patterns</p>
+                    </div>
+                    <div class="vision-card">
+                        <h3>Custom Solutions</h3>
+                        <p>Developing specialized tools for Walmart's unique development needs</p>
+                    </div>
+                    <div class="vision-card">
+                        <h3>Global Implementation</h3>
+                        <p>Rolling out Codeium tools across all Walmart development teams worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const accessCode = document.getElementById('access-code').value.trim();
-            const errorMessage = document.getElementById('error-message');
-            
-            if (accessCode === 'WMT2025') {
-                window.location.href = 'walmart.html';
-            } else {
-                errorMessage.style.display = 'block';
-            }
+        // Tab switching functionality
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                
+                // Update navigation
+                document.querySelectorAll('nav a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                link.classList.add('active');
+                
+                // Update sections
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
         });
 
-        // Clear error message when user starts typing
-        document.getElementById('access-code').addEventListener('input', function() {
-            document.getElementById('error-message').style.display = 'none';
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
